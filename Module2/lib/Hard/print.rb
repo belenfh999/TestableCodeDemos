@@ -1,6 +1,6 @@
 require_relative '../../common/invoice'
 require_relative '../../common/database'
-require_relative './hard_to_test_printer'
+require_relative './printer'
 
 module Module2
   class PrintInvoiceCommand
