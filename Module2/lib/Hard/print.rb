@@ -3,7 +3,7 @@ require_relative '../../common/database'
 require_relative './printer'
 
 module Module2
-  class PrintInvoiceCommand
+  class PrintInvoiceCommandHard
     def execute(invoice_id)
       database = Database.new
       database.file_path = "../../invoices/#{invoice_id}.txt"
@@ -19,7 +19,7 @@ module Module2
       printer.write_line("Printed: #{date_time.to_s}")
     end
   end
-  p = PrintInvoiceCommand.new
+  p = PrintInvoiceCommandHard.new
   p.execute('inv_1')
 end
 
