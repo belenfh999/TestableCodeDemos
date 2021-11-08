@@ -17,8 +17,8 @@ module Module2
           invoice.id = each_line
         when 1
           invoice.total = each_line.to_f
-        when 2
-          invoice.date = Date.parse(each_line)
+        else
+          break
         end
         line_index += 1
       end
