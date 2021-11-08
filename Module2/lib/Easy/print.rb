@@ -22,9 +22,4 @@ module Module2
       @printer.write_line("Printed: #{@date_time.to_s}")
     end
   end
-  db = Database.new
-  invoice_id = 'inv_1'
-  db.file_path = "../../invoices/#{invoice_id}.txt"
-  p = PrintInvoiceCommand.new(db, Printer.new, DateTimeWrapper.new)
-  p.execute(invoice_id)
 end
