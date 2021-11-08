@@ -3,9 +3,10 @@ module Module2
   class DateTimeWrapper < IDateTimeWrapper
     attr_reader :today
 
-    def initialize
-      @today = Time.now
+    def initialize(today = Time.now)
+      @today = today
     end
+
     def get_now
       @today
     end
