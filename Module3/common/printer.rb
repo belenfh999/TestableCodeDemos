@@ -19,7 +19,7 @@ module Module3
       when 'red'
         puts "#{text}".colorize(:red)
       else
-        puts text
+        puts "#{text}"
       end
     end
   end
