@@ -47,10 +47,8 @@ class DatabaseTest < Minitest::Test
     @database.file_path = "../TestableCodeDemos/Module2/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 30.0
-    @invoice.date = Date.parse('10-10-2021')
     assert_equal(@invoice.id, @database.get_invoice(invoice_id).id)
     assert_equal(@invoice.total, @database.get_invoice(invoice_id).total)
-    assert_equal(@invoice.date, @database.get_invoice(invoice_id).date)
   end
 
   def test_read_first_three_lines_inv_2
@@ -58,10 +56,8 @@ class DatabaseTest < Minitest::Test
     @database.file_path = "../TestableCodeDemos/Module2/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 303.0
-    @invoice.date = Date.parse('20-10-2010')
     assert_equal(@invoice.id, @database.get_invoice(invoice_id).id)
     assert_equal(@invoice.total, @database.get_invoice(invoice_id).total)
-    assert_equal(@invoice.date, @database.get_invoice(invoice_id).date)
   end
 end
 

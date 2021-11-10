@@ -1,4 +1,3 @@
-require 'date'
 require_relative '../lib/Easy/i_database'
 
 module Module2
