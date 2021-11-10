@@ -1,5 +1,5 @@
 require_relative './i_date_time_wrapper'
-module Module2
+module Module3
   class DateTimeWrapper < IDateTimeWrapper
     attr_reader :today
 
