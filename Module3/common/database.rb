@@ -20,13 +20,20 @@ module Module3
         when 1
           invoice.content.total = each_line.to_f
         when 2
-          invoice.state = !!each_line
+          invoice.state = true?(each_line)
         else
           break
         end
         line_index += 1
       end
       invoice
+    end
+
+    private
+
+    def true?(str)
+      return true if str == 'true'
+      return false if str == 'false'
     end
   end
 end
