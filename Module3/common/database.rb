@@ -1,11 +1,14 @@
 require_relative './i_database'
+require 'ostruct'
 
 module Module3
   class Database < IDatabase
     attr_accessor :file_path
 
     def get_invoice(invoice_id)
-      invoice = Invoice.new
+      invoice = OpenStruct.new
+      invoice.content = Invoice.new
+      invoice.state = false
       line_index = 0
       file = File.open(File.expand_path("#{invoice_id}.txt", File.dirname(@file_path)))
 
@@ -13,9 +16,11 @@ module Module3
         each_line = each_line.strip
         case line_index
         when 0
-          invoice.id = each_line
+          invoice.content.id = each_line
         when 1
-          invoice.total = each_line.to_f
+          invoice.content.total = each_line.to_f
+        when 2
+          invoice.state = !!each_line
         else
           break
         end
