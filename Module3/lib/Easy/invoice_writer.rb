@@ -7,7 +7,7 @@ require_relative './i_invoice_writer'
 
 module Module3
   class InvoiceWriter < IInvoiceWriter
-    attr_reader :printer, :invoice, :overdue, :invoice_state, :date_time
+    attr_reader :printer, :invoice_state, :date_time
 
     def initialize(printer, layout, date_time)
       @printer = printer
