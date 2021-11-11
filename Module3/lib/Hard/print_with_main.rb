@@ -2,7 +2,7 @@ require_relative '../../common/database'
 require_relative '../../common/invoice'
 require_relative '../../common/printer'
 require_relative '../../common/date_time_wrapper'
-require_relative './invoice_writer'
+require_relative './voice_writer_hard'
 
 module Module3
   class PrintInvoiceCommand

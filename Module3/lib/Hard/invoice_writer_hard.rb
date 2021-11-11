@@ -5,7 +5,7 @@ require_relative '../../common/page_layout'
 
 
 module Module3
-  class InvoiceWriter
+  class InvoiceWriterHard
     attr_reader :printer, :invoice, :invoice_state, :date_time
 
     def initialize(printer, invoice, date_time)

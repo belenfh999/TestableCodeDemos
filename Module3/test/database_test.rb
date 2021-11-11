@@ -58,7 +58,7 @@ class DatabaseTest < Minitest::Test
     @database.file_path = "../TestableCodeDemos/Module3/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 303.0
-    invoice_state = true
+    invoice_state = false
     assert_equal(@invoice.id, @database.get_invoice(invoice_id).content.id)
     assert_equal(@invoice.total, @database.get_invoice(invoice_id).content.total)
     assert_equal(invoice_state, @database.get_invoice(invoice_id).state)
