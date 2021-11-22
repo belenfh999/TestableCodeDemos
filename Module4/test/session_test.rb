@@ -2,27 +2,27 @@ require 'minitest/autorun'
 
 require_relative '../Shared/login'
 
-class LoginTest < Minitest::Test
+class SessionTest < Minitest::Test
   include Module4
 
   def setup
-    @username = 'a-username'
+    @user = User.new('a-username')
   end
   def test_create_login
-    expected_user = User.new(@username)
+    expected_login = Login.new(@user)
 
-    login = Login.new(User.new(@username))
+    login = Login.new(User.new('a-username'))
 
-    assert_equal(expected_user.username, login.user.username)
+    assert_equal(expected_login, login)
   end
 
   def test_cannot_change_user
-    another_username = 'another-username'
+    another_user = User.new('another-username')
 
     login = Login.new(User.new(@username))
 
     assert_raises NoMethodError do
-      login.user = User.new(another_username)
+      login.user = another_user
     end
   end
 

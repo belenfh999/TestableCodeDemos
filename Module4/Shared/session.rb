@@ -1,7 +1,13 @@
 module Module4
-  class ISession
+  class Session < ISession
+    attr_reader :login
+
+    def initialize(login)
+      @login = login
+    end
+
     def get_login
-      raise 'Don\'t forget to implement the get_login method'
+      @login
     end
   end
 end
