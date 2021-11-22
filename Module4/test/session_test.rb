@@ -13,7 +13,7 @@ class LoginTest < Minitest::Test
 
     login = Login.new(User.new(@username))
 
-    assert_equal(expected_user, login.user)
+    assert_equal(expected_user.username, login.user.username)
   end
 
   def test_cannot_change_user

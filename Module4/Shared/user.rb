@@ -5,5 +5,9 @@ module Module4
     def initialize(username)
       @username = username
     end
+
+    def ==(other)
+      return self.username == other.username
+    end
   end
 end
