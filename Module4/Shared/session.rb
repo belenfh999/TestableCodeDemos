@@ -1,3 +1,5 @@
+require_relative './i_session'
+
 module Module4
   class Session < ISession
     attr_reader :login
@@ -8,6 +10,10 @@ module Module4
 
     def get_login
       @login
+    end
+
+    def ==(other)
+      return self.user == other.user
     end
   end
 end

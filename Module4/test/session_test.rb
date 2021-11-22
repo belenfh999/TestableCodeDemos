@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 
 require_relative '../Shared/login'
+require_relative '../Shared/session'
 
 class SessionTest < Minitest::Test
   include Module4
@@ -25,7 +26,5 @@ class SessionTest < Minitest::Test
       login.user = another_user
     end
   end
-
-
 end
 
