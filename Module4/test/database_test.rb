@@ -63,5 +63,31 @@ class DatabaseTest < Minitest::Test
     assert_equal(@invoice.total, @database.get_invoice(invoice_id).content.total)
     assert_equal(invoice_state, @database.get_invoice(invoice_id).state)
   end
+
+  def test_read_first_four_lines_inv_1
+    invoice_id = 'inv_1'
+    @database.file_path = "../TestableCodeDemos/Module4/invoices/#{invoice_id}.txt"
+    @invoice.id = invoice_id
+    @invoice.total = 30.0
+    @invoice.last_printed_by = 'Arthur'
+    invoice_state = true
+    assert_equal(@invoice.id, @database.get_invoice(invoice_id).content.id)
+    assert_equal(@invoice.total, @database.get_invoice(invoice_id).content.total)
+    assert_equal(invoice_state, @database.get_invoice(invoice_id).state)
+    assert_equal(@invoice.last_printed_by, @database.get_invoice(invoice_id).last_printed_by)
+  end
+
+  def test_read_first_four_lines_inv_2
+    invoice_id = 'inv_2'
+    @database.file_path = "../TestableCodeDemos/Module4/invoices/#{invoice_id}.txt"
+    @invoice.id = invoice_id
+    @invoice.total = 303.0
+    invoice_state = false
+    @invoice.last_printed_by = 'Emma'
+    assert_equal(@invoice.id, @database.get_invoice(invoice_id).content.id)
+    assert_equal(@invoice.total, @database.get_invoice(invoice_id).content.total)
+    assert_equal(invoice_state, @database.get_invoice(invoice_id).state)
+    assert_equal(@invoice.last_printed_by, @database.get_invoice(invoice_id).last_printed_by)
+  end
 end
 

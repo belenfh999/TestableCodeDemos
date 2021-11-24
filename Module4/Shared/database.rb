@@ -9,6 +9,7 @@ module Module4
       invoice = OpenStruct.new
       invoice.content = Invoice.new
       invoice.state = false
+      invoice.last_printed_by = ""
       line_index = 0
       file = File.open(File.expand_path("#{invoice_id}.txt", File.dirname(@file_path)))
 
@@ -21,12 +22,18 @@ module Module4
           invoice.content.total = each_line.to_f
         when 2
           invoice.state = true?(each_line)
+        when 3
+          invoice.last_printed_by = each_line
         else
           break
         end
         line_index += 1
       end
       invoice
+    end
+
+    def save
+      puts "Saved!"
     end
 
     private
