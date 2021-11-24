@@ -18,6 +18,7 @@ module Module4
     def write(invoice)
       invoice_content = invoice.content
       overdue = invoice.state
+      printed_by = invoice.last_printed_by
       @printer.set_page_layout(@layout)
       overdue ? @printer.set_ink_color('red') : @printer.set_ink_color('default')
 
@@ -25,7 +26,9 @@ module Module4
 
       @printer.write_line("Total: $#{invoice_content.total}")
 
-      @printer.write_line("Printed: #{@date_time.to_s}")
+      @printer.write_line("Printed on: #{@date_time.to_s}")
+
+      @printer.write_line("Printed by: #{printed_by}")
     end
   end
 end
