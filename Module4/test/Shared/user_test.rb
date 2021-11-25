@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 
-require_relative '../Shared/user'
+require_relative '../../Shared/user'
 
 class UserTest < Minitest::Test
   include Module4

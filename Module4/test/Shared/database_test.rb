@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'date'
-require_relative '../Shared/database'
-require_relative '../Shared/invoice'
+require_relative '../../Shared/database'
+require_relative '../../Shared/invoice'
 
 class DatabaseTest < Minitest::Test
   include Module4

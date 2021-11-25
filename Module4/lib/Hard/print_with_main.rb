@@ -1,15 +1,15 @@
-require_relative '../Shared/container'
-require_relative '../Shared/database'
-require_relative '../Shared/invoice'
-require_relative '../Shared/printer'
-require_relative '../Shared/date_time_wrapper'
-require_relative '../Shared/invoice_writer'
-require_relative '../Shared/session'
-require_relative '../Shared/login'
-require_relative '../Shared/user'
+require_relative '../../Shared/container'
+require_relative '../../Shared/database'
+require_relative '../../Shared/invoice'
+require_relative '../../Shared/printer'
+require_relative '../../Shared/date_time_wrapper'
+require_relative '../../Shared/invoice_writer'
+require_relative '../../Shared/session'
+require_relative '../../Shared/login'
+require_relative '../../Shared/user'
 
 module Module4
-  class PrintInvoiceCommand
+  class PrintHardInvoiceCommand
     attr_reader :container
 
     def initialize(container)
@@ -35,6 +35,6 @@ module Module4
       c[:invoice_writer] = InvoiceWriter.new(Printer.new, PageLayout.new, DateTimeWrapper.new)
       c[:session] = Session.new(Login.new(User.new("Arthur")))
     end
-  p = PrintInvoiceCommand.new(c)
+  p = PrintHardInvoiceCommand.new(c)
   p.execute(invoice_id)
 end

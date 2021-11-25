@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 
-require_relative '../Shared/login'
-require_relative '../Shared/session'
+require_relative '../../Shared/login'
+require_relative '../../Shared/session'
 
 class SessionTest < Minitest::Test
   include Module4

@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 
-require_relative '../Shared/login'
+require_relative '../../Shared/login'
 
 class LoginTest < Minitest::Test
   include Module4
