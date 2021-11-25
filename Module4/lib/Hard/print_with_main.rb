@@ -29,7 +29,7 @@ module Module4
   db = Database.new
   invoice_id = 'inv_1'
   # invoice_id = 'inv_2'
-  db.file_path = "../../Module4/invoices/#{invoice_id}.txt"
+  db.file_path = "../../invoices/#{invoice_id}.txt"
   c = Container.new do |c|
       c[:database] = db
       c[:invoice_writer] = InvoiceWriter.new(Printer.new, PageLayout.new, DateTimeWrapper.new)
