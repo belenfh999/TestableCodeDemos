@@ -22,8 +22,6 @@ module Module4
           invoice.content.total = each_line.to_f
         when 2
           invoice.state = true?(each_line)
-        when 3
-          invoice.last_printed_by = each_line
         else
           break
         end
