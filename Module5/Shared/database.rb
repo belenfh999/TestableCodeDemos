@@ -9,7 +9,8 @@ module Module5
       invoice = OpenStruct.new
       invoice.content = Invoice.new
       invoice.state = false
-      invoice.last_printed_by = ""
+      invoice.user = ""
+      invoice.is_admin = false
       line_index = 0
       file = File.open(File.expand_path("#{invoice_id}.txt", File.dirname(@file_path)))
 
@@ -22,6 +23,10 @@ module Module5
           invoice.content.total = each_line.to_f
         when 2
           invoice.state = true?(each_line)
+        when 3
+          invoice.user = each_line
+        when 4
+          invoice.is_admin = true?(each_line)
         else
           break
         end
