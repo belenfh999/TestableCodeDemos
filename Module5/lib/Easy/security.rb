@@ -1,11 +1,20 @@
+require_relative './i_security'
+
 module Module5
-  class ISecurity
+  class Security < ISecurity
+    attr_reader :username, :is_admin
+
+    def set_user(username, is_admin)
+      @username = username
+      @is_admin = is_admin
+    end
+
     def get_username
-      raise 'Don\'t forget to implement the get_username method'
+      @username
     end
 
     def is_admin
-      raise 'Don\'t forget to implement the is_admin method'
+      @is_admin
     end
   end
 end

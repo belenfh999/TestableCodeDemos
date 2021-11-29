@@ -15,7 +15,7 @@ module Module5
     def execute(invoice_id)
       invoice = @database.get_invoice(invoice_id)
 
-      security = Security.get_instance
+      security = HardSecurity.get_instance
       security.set_user(invoice.user, invoice.is_admin)
 
       raise UserNotAuthorizedException.new unless security.is_admin

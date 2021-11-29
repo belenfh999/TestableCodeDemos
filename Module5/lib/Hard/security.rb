@@ -1,9 +1,9 @@
 module Module5
-  class Security
+  class HardSecurity
     attr_accessor :username, :is_admin
+    @@instance = HardSecurity.new
     private_class_method :new
 
-    @@instance = Security.new
 
     def self.get_instance
       @@instance
