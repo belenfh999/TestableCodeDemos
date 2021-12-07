@@ -27,6 +27,8 @@ module Module6
           invoice.user = each_line
         when 4
           invoice.is_admin = true?(each_line)
+        when 5
+          invoice.content.email_address = each_line
         else
           break
         end

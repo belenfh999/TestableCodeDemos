@@ -105,7 +105,7 @@ class DatabaseTest < Minitest::Test
     assert_equal(expected_is_admin, @database.get_invoice(invoice_id).is_admin)
   end
 
-  def test_read_first_five_lines_inv_1
+  def test_read_first_five_lines_inv_2
     invoice_id = 'inv_2'
     @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
@@ -118,6 +118,40 @@ class DatabaseTest < Minitest::Test
     assert_equal(invoice_state, @database.get_invoice(invoice_id).state)
     assert_equal(expected_user, @database.get_invoice(invoice_id).user)
     assert_equal(expected_is_admin, @database.get_invoice(invoice_id).is_admin)
+  end
+
+  def test_read_first_six_lines_inv_1
+    invoice_id = 'inv_1'
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
+    @invoice.id = invoice_id
+    @invoice.total = 30.0
+    invoice_state = true
+    expected_user = 'Michael'
+    expected_is_admin = true
+    expected_email = 'michael@autoparts.com'
+    assert_equal(@invoice.id, @database.get_invoice(invoice_id).content.id)
+    assert_equal(@invoice.total, @database.get_invoice(invoice_id).content.total)
+    assert_equal(invoice_state, @database.get_invoice(invoice_id).state)
+    assert_equal(expected_user, @database.get_invoice(invoice_id).user)
+    assert_equal(expected_is_admin, @database.get_invoice(invoice_id).is_admin)
+    assert_equal(expected_email, @database.get_invoice(invoice_id).content.email_address)
+  end
+
+  def test_read_first_six_lines_inv_2
+    invoice_id = 'inv_2'
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
+    @invoice.id = invoice_id
+    @invoice.total = 303.0
+    invoice_state = false
+    expected_user = 'Rachel'
+    expected_is_admin = false
+    expected_email = 'rachael@autoparts.com'
+    assert_equal(@invoice.id, @database.get_invoice(invoice_id).content.id)
+    assert_equal(@invoice.total, @database.get_invoice(invoice_id).content.total)
+    assert_equal(invoice_state, @database.get_invoice(invoice_id).state)
+    assert_equal(expected_user, @database.get_invoice(invoice_id).user)
+    assert_equal(expected_is_admin, @database.get_invoice(invoice_id).is_admin)
+    assert_equal(expected_email, @database.get_invoice(invoice_id).content.email_address)
   end
 end
 
