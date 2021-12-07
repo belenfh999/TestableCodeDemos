@@ -1,4 +1,4 @@
-module Module5
+module Module6
   class IDateTimeWrapper
     def get_now
       raise 'Don\'t forget to implement the get_now method'

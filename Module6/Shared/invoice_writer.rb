@@ -5,7 +5,7 @@ require_relative './page_layout'
 require_relative './i_invoice_writer'
 
 
-module Module5
+module Module6
   class InvoiceWriter < IInvoiceWriter
     attr_reader :printer, :invoice_state, :date_time
 

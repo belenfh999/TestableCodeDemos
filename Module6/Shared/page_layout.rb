@@ -1,4 +1,4 @@
-module Module5
+module Module6
   class PageLayout
     attr_accessor :color
   end

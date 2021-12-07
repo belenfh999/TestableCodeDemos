@@ -1,7 +1,7 @@
 require_relative './i_printer'
 require_relative './page_layout'
 require 'colorize'
-module Module5
+module Module6
   class Printer < IPrinter
     attr_accessor :page_layout
 

@@ -1,4 +1,4 @@
-module Module5
+module Module6
   class IPrinter
     def set_page_layout(layout)
       raise 'Don\'t forget to implement the set_page_layout method'

@@ -1,7 +1,7 @@
 require_relative './i_database'
 require 'ostruct'
 
-module Module5
+module Module6
   class Database < IDatabase
     attr_accessor :file_path
 

@@ -4,29 +4,29 @@ require_relative '../../Shared/database'
 require_relative '../../Shared/invoice'
 
 class DatabaseTest < Minitest::Test
-  include Module5
+  include Module6
   def setup
-    @database = Module5::Database.new
-    @invoice = Module5::Invoice.new
+    @database = Module6::Database.new
+    @invoice = Module6::Invoice.new
   end
 
   def test_read_first_line_id_inv_1
     invoice_id = 'inv_1'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     assert_equal(@invoice.id, @database.get_invoice(invoice_id).content.id)
   end
 
   def test_read_first_line_id_inv_2
     invoice_id = 'inv_2'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     assert_equal(@invoice.id, @database.get_invoice(invoice_id).content.id)
   end
 
   def test_read_first_two_lines_inv_1
     invoice_id = 'inv_1'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 30.0
     assert_equal(@invoice.id, @database.get_invoice(invoice_id).content.id)
@@ -35,7 +35,7 @@ class DatabaseTest < Minitest::Test
 
   def test_read_first_two_lines_inv_2
     invoice_id = 'inv_2'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 303.0
     assert_equal(@invoice.id, @database.get_invoice(invoice_id).content.id)
@@ -44,7 +44,7 @@ class DatabaseTest < Minitest::Test
 
   def test_read_first_three_lines_inv_1
     invoice_id = 'inv_1'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 30.0
     invoice_state = true
@@ -55,7 +55,7 @@ class DatabaseTest < Minitest::Test
 
   def test_read_first_three_lines_inv_2
     invoice_id = 'inv_2'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 303.0
     invoice_state = false
@@ -66,7 +66,7 @@ class DatabaseTest < Minitest::Test
 
   def test_read_first_four_lines_inv_1
     invoice_id = 'inv_1'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 30.0
     invoice_state = true
@@ -79,7 +79,7 @@ class DatabaseTest < Minitest::Test
 
   def test_read_first_four_lines_inv_2
     invoice_id = 'inv_2'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 303.0
     invoice_state = false
@@ -92,7 +92,7 @@ class DatabaseTest < Minitest::Test
 
   def test_read_first_five_lines_inv_1
     invoice_id = 'inv_1'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 30.0
     invoice_state = true
@@ -107,7 +107,7 @@ class DatabaseTest < Minitest::Test
 
   def test_read_first_five_lines_inv_1
     invoice_id = 'inv_2'
-    @database.file_path = "../TestableCodeDemos/Module5/invoices/#{invoice_id}.txt"
+    @database.file_path = "../TestableCodeDemos/Module6/invoices/#{invoice_id}.txt"
     @invoice.id = invoice_id
     @invoice.total = 303.0
     invoice_state = false

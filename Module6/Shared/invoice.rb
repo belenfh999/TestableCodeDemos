@@ -1,4 +1,4 @@
-module Module5
+module Module6
   class Invoice
     attr_accessor :id, :total, :status, :last_printed_by
     invoice_status = {

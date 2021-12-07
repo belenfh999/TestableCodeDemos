@@ -1,4 +1,4 @@
-module Module5
+module Module6
   class IDatabase
     def get_invoice(invoice_id)
       raise 'Don\'t forget to implement the get_invoice method'
