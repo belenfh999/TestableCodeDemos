@@ -3,7 +3,7 @@ require_relative './email_address_is_blank_exception'
 
 module Module6
   class EmailValidator < IEmailValidator
-    attr_accessor :emails, file_path
+    attr_accessor :emails, :file_path
 
     def initialize(file_path)
       @file_path = file_path
