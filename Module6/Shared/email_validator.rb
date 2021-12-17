@@ -10,8 +10,12 @@ module Module6
     end
 
     def valid?(address)
-      raise EmailAddressIsBlankException if address == ""
+      raise EmailAddressIsBlankException if empty_address?(address)
       true
+    end
+
+    def empty_address?(address)
+      address == nil or address == ""
     end
   end
 end
