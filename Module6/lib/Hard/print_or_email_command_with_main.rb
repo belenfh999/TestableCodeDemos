@@ -35,9 +35,7 @@ module Module6
   db = Module6::Database.new
   invoice_id = 'inv_1'
   # invoice_id = 'inv_2'
-  db.invoice_file_path = "../../invoices/#{invoice_id}.txt"
-  email_file_path = "../../email_addresses/emails.txt"
-  db.email_file_path = email_file_path
+  db.file_path = "../../invoices/#{invoice_id}.txt"
   invoice_writer = InvoiceWriter.new(Printer.new, PageLayout.new, DateTimeWrapper.new)
 
   p = PrintOrEmailCommand.new(db, Security.new, invoice_writer, InvoiceEmailer.new(email_file_path))

@@ -47,10 +47,6 @@ module Module6
       return true if str == 'true'
       return false if str == 'false'
     end
-
-    def store_email(email)
-      File.open("emails.txt", "w") { |f| f.write "#{email}" }
-    end
   end
 end
 
