@@ -1,6 +1,0 @@
-inv_1
-30.0
-true
-Michael
-true
-michael@autoparts.com
