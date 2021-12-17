@@ -11,9 +11,7 @@ module Module6
 
     def email(invoice)
       email_address = invoice.content.email_address
-      @email_validator.update_emails
       puts("Invoice emailed to: #{email_address}") if @email_validator.valid? email_address
     end
-
   end
 end

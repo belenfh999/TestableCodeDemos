@@ -18,7 +18,7 @@ module Module6
     def execute(invoice_id, should_email)
       invoice = @database.get_invoice(invoice_id)
       if should_email
-        @invoice_emailer.email(invoice.content.email_address)
+        @invoice_emailer.email(invoice)
       else
         @security.set_user(invoice.user, invoice.is_admin)
 
@@ -40,5 +40,5 @@ module Module6
 
   p = PrintOrEmailCommand.new(db, Security.new, invoice_writer, InvoiceEmailer.new)
 
-  p.execute(invoice_id, false)
+  p.execute(invoice_id, true)
 end
