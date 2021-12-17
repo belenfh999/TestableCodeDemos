@@ -3,23 +3,15 @@ require_relative './email_address_is_blank_exception'
 
 module Module6
   class EmailValidator < IEmailValidator
-    attr_accessor :emails, :file_path
+    attr_accessor :email
 
-    def initialize(file_path)
-      @file_path = file_path
+    def initialize(email)
+      @email = email
     end
 
     def valid?(address)
       raise EmailAddressIsBlankException if address == ""
-      @emails.include? address
-    end
-
-    def update_emails
-      @emails = []
-      file = File.open(@file_path)
-      file.each do |each_line|
-        @emails.push(each_line.strip)
-      end
+      true
     end
   end
 end

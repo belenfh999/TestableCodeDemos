@@ -5,8 +5,8 @@ module Module6
   class InvoiceEmailer < IInvoiceEmailer
     attr_accessor :email_validator
 
-    def initialize(file_path)
-      @email_validator = EmailValidator.new(file_path)
+    def initialize
+      @email_validator = EmailValidator.new(@email)
     end
 
     def email(invoice)

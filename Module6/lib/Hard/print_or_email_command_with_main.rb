@@ -38,7 +38,7 @@ module Module6
   db.file_path = "../../invoices/#{invoice_id}.txt"
   invoice_writer = InvoiceWriter.new(Printer.new, PageLayout.new, DateTimeWrapper.new)
 
-  p = PrintOrEmailCommand.new(db, Security.new, invoice_writer, InvoiceEmailer.new(email_file_path))
+  p = PrintOrEmailCommand.new(db, Security.new, invoice_writer, InvoiceEmailer.new)
 
   p.execute(invoice_id, false)
 end
