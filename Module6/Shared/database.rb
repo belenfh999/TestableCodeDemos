@@ -29,6 +29,7 @@ module Module6
           invoice.is_admin = true?(each_line)
         when 5
           invoice.content.email_address = each_line
+          store_email(each_line)
         else
           break
         end
@@ -46,6 +47,10 @@ module Module6
     def true?(str)
       return true if str == 'true'
       return false if str == 'false'
+    end
+
+    def store_email(email)
+      File.open("emails.txt", "w") { |f| f.write "#{email}" }
     end
   end
 end
