@@ -31,6 +31,9 @@ In this module a new feature is added, which is printing overdue invoices in red
   * The use of containers is removed (only used in the hard to test version)
   * Instead, an identity service is used.
 * Since Ruby does not have containers an implementation found on Github was used. (https://gist.github.com/ne-sachirou)
+### Updated entities:
+#### Invoice:
+* The invoice class now also has the attributes: status & last_printed_by
 ### New dependencies:
 #### Session:
 * Used inside a container to encapsulate all the user's info (Hard to test).
@@ -62,6 +65,11 @@ In this module a new feature is added, which is printing overdue invoices in red
   * In the hard to test version, the same class has both the emailing and printing functionality.
   * In the easy to test version, those functionalities are separated into two classes.
 ### New dependencies:
-
+#### EmailValidator:
+* It checks whether the email provided is valid or not.
+#### InvoiceEmailer:
+* Class that encapsulates the EmailValidator.
+* It sends a message saying that the invoice has been emailed.
 ### Exceptions:
-
+#### EmailAddressIsBlankException
+* This exception is triggered when the email address is not blank.
