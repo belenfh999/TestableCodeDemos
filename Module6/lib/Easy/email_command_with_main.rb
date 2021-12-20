@@ -21,9 +21,9 @@ module Module6
     end
   end
   db = Module6::Database.new
-  # invoice_id = 'inv_1'
+  invoice_id = 'inv_1'
   # invoice_id = 'inv_2'
-  invoice_id = 'inv_3'
+  # invoice_id = 'inv_3'
   db.file_path = "../../invoices/#{invoice_id}.txt"
 
   p = EmailCommand.new(db, Security.new, InvoiceEmailer.new)
