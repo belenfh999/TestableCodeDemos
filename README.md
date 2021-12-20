@@ -1,6 +1,7 @@
 # TestableCodeDemos
 Demos based on the Testable Code Course from PluralSight.
 The original demos were written in C#, so this is an adaptation of them.
+
 Some services and dependencies are simplified since the main goal is learning about testable code.
 ## Module 1
 Simple program on the terminal which calculates the total sum to be paid to the imaginary autoparts business.
